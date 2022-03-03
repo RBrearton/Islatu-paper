@@ -60,9 +60,9 @@ performing numerical orbit integration). -->
 
 # Statement of need
 
-`Islatu` is a python package that simplifies the process of reducing raw
+`Islatu` is a Python package that simplifies the process of reducing raw
 reflectometry data. Errors are automatically propagated from the raw data to the
-reduced dataset using optimized numpy routines [@harris2020array]. This package
+reduced dataset using optimized `numpy` routines [@harris2020array]. This package
 is designed
 to serve two purposes. Firstly, it provides an interface that can be used to
 easily script custom reflectometry reduction pipelines. As the fitting of
@@ -72,7 +72,8 @@ structure of the material of interest. In some cases, this could be related to
 errors made at data reduction time. Islatu gives large scale facility users the
 ability to script data reduction at analysis time. This can be particularly
 important when combining data sets with very different statistical uncertainties
-(as would be the case when comparing neutron and x-ray reflectivity curves).
+(as would be the case when comparing neutron and x-ray reflectivity curves), as
+errors are computed at data reduction time.
 
 The second purpose of `Islatu` is to provide a simple command-line interface,
 that can be used in conjunction with a configuration file, to make reflectivity
@@ -91,11 +92,11 @@ modern synchrotrons. Thanks to `Islatu`'s modular design, it is a
 straightforward task to extend this functionality to other data sources; only
 one parsing function needs to be added per file type.
 
-Islatu was designed with two-dimensional detectors in mind, but support for
+Islatu was designed for use with two-dimensional detectors, but support for
 point detectors is complete and all reduction steps can be carried out with
-identical syntax. The first step in any data reduction with `Islatu` is to
-instantiate a `Profile` object. A full reflectivity profile can generally be
-made up of more than one
+identical syntax. To give an overview of `Islatu`'s Python API, the first step
+in any data reduction with `Islatu` is to instantiate a `Profile` object. A full
+reflectivity profile can generally be made up of more than one
 $|\vec{Q}|$
 scan, where $\vec{Q}$ is the probe particle's
 scattering vector. To instantiate a `Profile` object, all that needs to be
@@ -114,25 +115,17 @@ minimized). The other reduction methods can be used in entirely analogous ways,
 taking arguments where necessary, and using metadata scraped from the raw data
 files wherever possible.
 
-<!-- `Gala` is an Astropy-affiliated Python package for galactic dynamics. Python
-enables wrapping low-level languages (e.g., C) for speed without losing
-flexibility or ease-of-use in the user-interface. The API for `Gala` was
-designed to provide a class-based and user-friendly interface to fast (C or
-Cython-optimized) implementations of common operations such as gravitational
-potential and force evaluation, orbit integration, dynamical transformations,
-and chaos indicators for nonlinear dynamics. `Gala` also relies heavily on and
-interfaces well with the implementations of physical units and astronomical
-coordinate systems in the `Astropy` package [@astropy] (`astropy.units` and
-`astropy.coordinates`).
-
-`Gala` was designed to be used by both astronomical researchers and by
-students in courses on gravitational dynamics or astronomy. It has already been
-used in a number of scientific publications [@Pearson:2017] and has also been
-used in graduate courses on Galactic dynamics to, e.g., provide interactive
-visualizations of textbook material [@Binney:2008]. The combination of speed,
-design, and support for Astropy functionality in `Gala` will enable exciting
-scientific explorations of forthcoming data releases from the _Gaia_ mission
-[@gaia] by students and experts alike. -->
+As well as the abovedescribed Python API, `Islatu` also features a command-line
+interface. This application is used at the I07 beamline at Diamond
+[@nicklin2016diamond]
+to process reflectivity data immediately after acquisition. The command-line
+interface runs a typical `Islatu` processing script, where the arguments taken
+by the various data reduction methods in the script are extracted from a combination
+of a .yaml configuration file and command-line arguments. The program outputs a
+human-readable metadata-rich .dat file, which at present aims to comply with the
+ORSO .ort file format definition, and will be converted to comply exactly with
+the .ort file format at such a time as the ORSO file format specification is
+finalized.
 
 # Acknowledgements
 

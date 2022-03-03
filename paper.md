@@ -11,7 +11,7 @@ authors:
     affiliation: "1, 2" # (Multiple affiliations must be quoted)
   - name: Andrew McCluskey
     orcid:
-    affiliation: 2
+    affiliation: 3
   - name: Tim Snow
     orcid:
     affiliation: "1, 4"
@@ -42,9 +42,10 @@ scattering matrix element
 ${\langle \vec{k}'\rvert}\hat{V}\lvert \vec{k} \rangle$. This is particularly
 true when the length of the scattering vector
 $|\vec{Q}| = |\vec{k} - \vec{k}'|$
-is small, as is the case in reflectivity experiments. Then, the finite
+is small, as is the case in reflectivity experiments. Then, in addition to
+corrections that must be applied in any scattering experiment, the finite
 size of the sample will affect the intensity of the
-reflected beam, and it is necessary to also correct for manual changes
+reflected beam, and it is often necessary to also correct for manual changes
 to the beam's attenuation.
 
 <!-- The forces on stars, galaxies, and dark matter under external gravitational

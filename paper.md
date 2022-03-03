@@ -70,12 +70,12 @@ of valuable beamtime, it is imperative that feedback on scans is given to users
 as quickly as possible after a scan has been performed.
 
 The final purpose of `Islatu` is to simplify the handling of errors.
-In `Islatu`, statistical errors are automatically calculated, and efficiently
+In `Islatu`, statistical errors are automatically calculated and efficiently
 propagated from the raw data to the reduced dataset using optimized
 `numpy` [@harris2020array] routines. Despite their fundamental simplicity,
 the propagation of uncertainties is error-prone. The assurance provided by
 unit tested error propagation gives scientists more time to focus on data
-analysis, and less time worrying about re-implemening tedious routines.
+analysis, with less time spent worrying about re-implemening standard routines.
 
 # Overview
 
@@ -86,7 +86,7 @@ directly supporting international standard file formats (including the NeXus
 making `Islatu` compatible with most
 modern synchrotrons. Thanks to `Islatu`'s modular design, it is a
 straightforward task to extend this functionality to other data sources; only
-one parsing function needs to be added per file type.
+one parsing function needs to be added per supported file type.
 
 Islatu was designed for use with two-dimensional detectors, but support for
 point detectors is complete and all reduction steps can be carried out with
@@ -100,8 +100,8 @@ provided is a list of source files and a function that can be used to parse
 them. Once the profile has been instantiated, reduction takes place by calling
 the `Profile` object's methods. For example, for an instance of `Profile`
 named `my_profile` representing data acquired when a beam with a full width at
-half maximum of 100 $\mu$m incident on a sample of length 10 mm, our
-reflectometry profile can be footprint corrected by calling
+half maximum of 100 $\mu$m was incident on a sample of length 10 mm, our
+reflectometry profile can be footprint-corrected by calling
 `my_profile.footprint_correction(beam_width=100e-6, sample_size=10e-3)`.
 The footprint correction is
 exact for Gaussian beam profiles, and, along with all other reduction methods

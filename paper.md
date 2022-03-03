@@ -16,9 +16,9 @@ authors:
     orcid:
     affiliation: "1, 4"
 affiliations:
-  - name: Diamond Light Source Ltd, Diamond House, Harwell Campus, Didcot, Oxfordshire, OX11 0DE
+  - name: Diamond Light Source Ltd, Diamond House, Harwell Campus, Didcot, Oxfordshire, OX11 0DE, United Kingdom
     index: 1
-  - name: Department of Physics, Clarendon Laboratory, University of Oxford, Oxford OX1 3PU, United Kingdom
+  - name: Department of Physics, Clarendon Laboratory, University of Oxford, Oxford, Oxfordshire, OX1 3PU, United Kingdom
     index: 2
   - name: European Spallation Source ERIC, P.O. Box 176, SE-221 00, Lund, Sweden
     index: 3
@@ -35,11 +35,17 @@ electronic structure of materials, on lengthscales determined by the difference
 between the incident and outgoing wavevector of the light. Reflectometry
 techniques involve scattering off the surface of a material, placing a detector
 at a point such that any light reaching the detector had to scatter through a
-vector approximately parallel to the material's surface normal. If the length of
-this scattering vector is particularly small, there are several corrections that
-must be applied to convert the raw data acquired by the detector to a quantity
-proportional to the quantity of interest: the modulus squared of the scattering
-matrix element ${\langle \vec{k}'\rvert}\hat{V}\lvert \vec{k} \rangle$.
+vector approximately parallel to the material's surface normal. Typically, for
+various experiment-specific reasons, the raw data recorded by a detector will
+not be proportional to the quantity of interest: the modulus squared of the
+scattering matrix element
+${\langle \vec{k}'\rvert}\hat{V}\lvert \vec{k} \rangle$. This is particularly
+true when the length of the scattering vector
+$|\vec{Q}| = |\vec{k} - \vec{k}'|$
+is small, as is the case in reflectivity experiments. Then, the finite
+size of the sample will affect the intensity of the
+reflected beam, and it is necessary to also correct for manual changes
+to the beam's attenuation.
 
 <!-- The forces on stars, galaxies, and dark matter under external gravitational
 fields lead to the dynamical evolution of structures in the universe. The orbits
@@ -55,7 +61,8 @@ performing numerical orbit integration). -->
 
 `Islatu` is a python package that simplifies the process of reducing raw
 reflectometry data. Errors are automatically propagated from the raw data to the
-reduced dataset using optimized numpy routines[@harris2020array]. This package is designed
+reduced dataset using optimized numpy routines [@harris2020array]. This package
+is designed
 to serve two purposes. Firstly, it provides an interface that can be used to
 easily script custom reflectometry reduction pipelines. As the fitting of
 reduced reflectivity data is an ill-posed problem, it is often challenging to
@@ -76,8 +83,9 @@ as quickly as possible after a scan has been performed.
 
 There are a multitude of instruments around the world capable of recording
 reflectivity data. `Islatu` has been designed with this in mind, with a focus on
-directly supporting international standard file formats (including the NeXus and
-ORSO file formats) for the initial release, making `Islatu` compatible with most
+directly supporting international standard file formats (including the NeXus
+[@konnecke2015nexus] and ORSO file formats) for the initial release,
+making `Islatu` compatible with most
 modern synchrotrons. Thanks to `Islatu`'s modular design, it is a
 straightforward task to extend this functionality to other data sources; only
 one parsing function needs to be added per file type.
@@ -86,13 +94,15 @@ Islatu was designed with two-dimensional detectors in mind, but support for
 point detectors is complete and all reduction steps can be carried out with
 identical syntax. The first step in any data reduction with `Islatu` is to
 instantiate a `Profile` object. A full reflectivity profile can generally be
-made up of more than one $|Q|$ scan, where $\vec{Q}$ is the probe particle's
+made up of more than one
+$|\vec{Q}|$
+scan, where $\vec{Q}$ is the probe particle's
 scattering vector. To instantiate a `Profile` object, all that needs to be
 provided is a list of source files and a function that can be used to parse
 them. Once the profile has been instantiated, reduction takes place by calling
 the `Profile` object's methods. For example, for an instance of `Profile`
 named `my_profile` representing data acquired when a beam with a full width at
-half maximum of 100 $\mu$m was incident on a sample of length 10mm, our
+half maximum of 100 $\mu$m incident on a sample of length 10 mm, our
 reflectometry profile can be footprint corrected by calling
 `my_profile.footprint_correction(beam_width=100e-6, sample_size=10e-3)`.
 The footprint correction is

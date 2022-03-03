@@ -43,7 +43,8 @@ vector approximately parallel to the material's surface normal.
 If the length of this scattering vector is particularly small, there are several
 corrections that must be applied to convert the raw data acquired by the
 detector to a quantity proportional to the quantity of interest: the square of
-the modulus of the quantum mechanical scattering matrix.
+the modulus of the quantum mechanical scattering matrix
+${\langle k'\rvert}\hat{V}\lvert \vec{k} \rangle$
 
 The forces on stars, galaxies, and dark matter under external gravitational
 fields lead to the dynamical evolution of structures in the universe. The orbits

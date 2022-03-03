@@ -58,7 +58,7 @@ performing numerical orbit integration).
 
 # Statement of need
 
-`Gala` is an Astropy-affiliated Python package for galactic dynamics. Python
+<!-- `Gala` is an Astropy-affiliated Python package for galactic dynamics. Python
 enables wrapping low-level languages (e.g., C) for speed without losing
 flexibility or ease-of-use in the user-interface. The API for `Gala` was
 designed to provide a class-based and user-friendly interface to fast (C or
@@ -76,7 +76,7 @@ used in graduate courses on Galactic dynamics to, e.g., provide interactive
 visualizations of textbook material [@Binney:2008]. The combination of speed,
 design, and support for Astropy functionality in `Gala` will enable exciting
 scientific explorations of forthcoming data releases from the _Gaia_ mission
-[@gaia] by students and experts alike.
+[@gaia] by students and experts alike. -->
 
 # Mathematics
 
@@ -99,7 +99,7 @@ and refer to \autoref{eq:fourier} from text.
 
 # Citations
 
-Citations to entries in paper.bib should be in
+<!-- Citations to entries in paper.bib should be in
 [rMarkdown](http://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html)
 format.
 
@@ -110,20 +110,21 @@ For a quick reference, the following citation commands can be used:
 
 - `@author:2001` -> "Author et al. (2001)"
 - `[@author:2001]` -> "(Author et al., 2001)"
-- `[@author1:2001; @author2:2001]` -> "(Author1 et al., 2001; Author2 et al., 2002)"
+- `[@author1:2001; @author2:2001]` -> "(Author1 et al., 2001; Author2 et al., 2002)" -->
 
 # Figures
 
-Figures can be included like this:
+<!-- Figures can be included like this:
 ![Caption for example figure.\label{fig:example}](figure.png)
 and referenced from text using \autoref{fig:example}.
 
 Figure sizes can be customized by adding an optional second parameter:
-![Caption for example figure.](figure.png){ width=20% }
+![Caption for example figure.](figure.png){ width=20% } -->
 
 # Acknowledgements
 
+<!--
 We acknowledge contributions from Brigitta Sipocz, Syrtis Major, and Semyeong
-Oh, and support from Kathryn Johnston during the genesis of this project.
+Oh, and support from Kathryn Johnston during the genesis of this project. -->
 
 # References

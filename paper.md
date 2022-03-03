@@ -22,7 +22,7 @@ affiliations:
     index: 2
   - name: European Spallation Source ERIC, P.O. Box 176, SE-221 00, Lund, Sweden
     index: 3
-  - name: Good morning
+  - name: GREETINGS, PLEASE ENTER YOUR UNIVERSITY'S PREFERRED AND PROBABLY ODDLY SPECIFIC ADDRESS HERE
     index: 4
 date: 03 March 2022
 bibliography: paper.bib
@@ -34,7 +34,7 @@ The interaction between light and matter provides a sensitive probe of the
 electronic structure of materials, on lengthscales determined by the difference
 between the incident and outgoing wavevector of the light. Reflectometry
 techniques involve scattering off the surface of a material, placing a detector
-at a point such that any light reaching the detector had to scatter through a
+at a point such that any light reaching the detector must scatter through a
 vector approximately parallel to the material's surface normal. Typically, for
 various experiment-specific reasons, the raw data recorded by a detector will
 not be proportional to the quantity of interest: the modulus squared of the
@@ -48,23 +48,11 @@ size of the sample will affect the intensity of the
 reflected beam, and it is often necessary to also correct for manual changes
 to the beam's attenuation.
 
-<!-- The forces on stars, galaxies, and dark matter under external gravitational
-fields lead to the dynamical evolution of structures in the universe. The orbits
-of these bodies are therefore key to understanding the formation, history, and
-future state of galaxies. The field of "galactic dynamics," which aims to model
-the gravitating components of galaxies to study their structure and evolution,
-is now well-established, commonly taught, and frequently used in astronomy.
-Aside from toy problems and demonstrations, the majority of problems require
-efficient numerical tools, many of which require the same base code (e.g., for
-performing numerical orbit integration). -->
-
 # Statement of need
 
 `Islatu` is a Python package that simplifies the process of reducing raw
-reflectometry data. Errors are automatically propagated from the raw data to the
-reduced dataset using optimized `numpy` routines [@harris2020array]. This package
-is designed
-to serve two purposes. Firstly, it provides an interface that can be used to
+reflectometry data to data that has scientific value. This package is designed
+to serve three purposes. Firstly, it provides an interface that can be used to
 easily script custom reflectometry reduction pipelines. As the fitting of
 reduced reflectivity data is an ill-posed problem, it is often challenging to
 fit reflectivity curves, even with significant a-priori knowledge of the
@@ -80,6 +68,14 @@ that can be used in conjunction with a configuration file, to make reflectivity
 reduction as automatic as possible. At large-scale facilities, to make the most
 of valuable beamtime, it is imperative that feedback on scans is given to users
 as quickly as possible after a scan has been performed.
+
+The final purpose of `Islatu` is to simplify the handling of errors.
+In `Islatu`, statistical errors are automatically calculated, and efficiently
+propagated from the raw data to the reduced dataset using optimized
+`numpy` [@harris2020array] routines. Despite their fundamental simplicity,
+the propagation of uncertainties is error-prone. The assurance provided by
+unit tested error propagation gives scientists more time to focus on data
+analysis, and less time worrying about re-implemening tedious routines.
 
 # Overview
 

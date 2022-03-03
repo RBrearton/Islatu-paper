@@ -84,7 +84,24 @@ one parsing function needs to be added per file type.
 
 Islatu was designed with two-dimensional detectors in mind, but support for
 point detectors is complete and all reduction steps can be carried out with
-identical syntax.
+identical syntax. The first step in any data reduction with `Islatu` is to
+instantiate a `Profile` object. A full reflectivity profile can generally be
+made up of more than one $|Q|$ scan, where $\vec{Q}$ is the probe particle's
+scattering vector. To instantiate a `Profile` object, all that needs to be
+provided is a list of source files and a function that can be used to parse
+them. Once the profile has been instantiated, reduction takes place by calling
+the `Profile` object's methods. For example, for an instance of `Profile`
+named `my_profile` representing data acquired when a beam with a full width at
+half maximum of 100 $\mu$m was incident on a sample of length 10mm, our
+reflectometry profile can be footprint corrected by calling
+`my_profile.footprint_correction(beam_width=100e-6, sample_size=10e-3)`.
+The footprint correction is
+exact for Gaussian beam profiles, and, along with all other reduction methods
+available to `Profile` objects, propagates errors optimally (such that the
+number of mathematical operations required to propagate the errors is
+minimized). The other reduction methods can be used in entirely analogous ways,
+taking arguments where necessary, and using metadata scraped from the raw data
+files wherever possible.
 
 <!-- `Gala` is an Astropy-affiliated Python package for galactic dynamics. Python
 enables wrapping low-level languages (e.g., C) for speed without losing
@@ -106,34 +123,8 @@ design, and support for Astropy functionality in `Gala` will enable exciting
 scientific explorations of forthcoming data releases from the _Gaia_ mission
 [@gaia] by students and experts alike. -->
 
-# Citations
-
-<!-- Citations to entries in paper.bib should be in
-[rMarkdown](http://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html)
-format.
-
-If you want to cite a software repository URL (e.g. something on GitHub without a preferred
-citation) then you can do it with the example BibTeX entry below for @fidgit.
-
-For a quick reference, the following citation commands can be used:
-
-- `@author:2001` -> "Author et al. (2001)"
-- `[@author:2001]` -> "(Author et al., 2001)"
-- `[@author1:2001; @author2:2001]` -> "(Author1 et al., 2001; Author2 et al., 2002)" -->
-
-# Figures
-
-<!-- Figures can be included like this:
-![Caption for example figure.\label{fig:example}](figure.png)
-and referenced from text using \autoref{fig:example}.
-
-Figure sizes can be customized by adding an optional second parameter:
-![Caption for example figure.](figure.png){ width=20% } -->
-
 # Acknowledgements
 
-<!--
-We acknowledge contributions from Brigitta Sipocz, Syrtis Major, and Semyeong
-Oh, and support from Kathryn Johnston during the genesis of this project. -->
+We acknowledge the support of Ada Lovelace Centre and what not.
 
 # References

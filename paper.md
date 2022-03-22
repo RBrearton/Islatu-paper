@@ -22,7 +22,7 @@ affiliations:
     index: 2
   - name: European Spallation Source ERIC, P.O. Box 176, SE-221 00, Lund, Sweden
     index: 3
-  - name: GREETINGS, PLEASE ENTER YOUR UNIVERSITY'S PREFERRED AND PROBABLY ODDLY SPECIFIC ADDRESS HERE
+  - name: School of Chemistry, University of Bristol, Bristol, BS8 1TS, UK
     index: 4
 date: 03 March 2022
 bibliography: paper.bib
@@ -57,7 +57,7 @@ easily script custom reflectometry reduction pipelines. As the fitting of
 reduced reflectivity data is an ill-posed problem, it is often challenging to
 fit reflectivity curves, even with significant a-priori knowledge of the
 structure of the material of interest. In some cases, this could be related to
-errors made at data reduction time. Islatu gives large scale facility users the
+errors made at data reduction time. Islatu gives users the
 ability to script data reduction at analysis time. This can be particularly
 important when combining data sets with very different statistical uncertainties
 (as would be the case when comparing neutron and x-ray reflectivity curves), as
@@ -65,9 +65,9 @@ errors are computed at data reduction time.
 
 The second purpose of `Islatu` is to provide a simple command-line interface,
 that can be used in conjunction with a configuration file, to make reflectivity
-reduction as automatic as possible. At large-scale facilities, to make the most
-of valuable beamtime, it is imperative that feedback on scans is given to users
-as quickly as possible after a scan has been performed.
+reduction as automatic as possible. For example, at large-scale facilities, to
+make the most of valuable beamtime, it is imperative that feedback on scans is
+given to users as quickly as possible after a scan has been performed.
 
 The final purpose of `Islatu` is to simplify the handling of errors.
 In `Islatu`, statistical errors are automatically calculated and efficiently
@@ -75,7 +75,7 @@ propagated from the raw data to the reduced dataset using optimized
 `numpy` [@harris2020array] routines. Despite their fundamental simplicity,
 the propagation of uncertainties is error-prone. The assurance provided by
 unit tested error propagation gives scientists more time to focus on data
-analysis, with less time spent worrying about re-implemening standard routines.
+analysis and less time spent worrying about re-implemening standard routines.
 
 # Overview
 
@@ -100,7 +100,7 @@ provided is a list of source files and a function that can be used to parse
 them. Once the profile has been instantiated, reduction takes place by calling
 the `Profile` object's methods. For example, for an instance of `Profile`
 named `my_profile` representing data acquired when a beam with a full width at
-half maximum of 100 $\mu$m was incident on a sample of length 10 mm, our
+half maximum of 100 µm was incident on a sample of length 10 mm, our
 reflectometry profile can be footprint-corrected by calling
 `my_profile.footprint_correction(beam_width=100e-6, sample_size=10e-3)`.
 The footprint correction is
@@ -125,6 +125,7 @@ finalized.
 
 # Acknowledgements
 
-We acknowledge the support of Ada Lovelace Centre and what not.
+We acknowledge the support given to this project by the Ada Lovelace centre who
+funded this work under the grant number 103318.
 
 # References

@@ -50,14 +50,14 @@ to the beam's attenuation.
 
 # Statement of need
 
-`Islatu` is a Python package that simplifies the process of reducing raw
-reflectometry data to data that has scientific value. This package is designed
-to serve three purposes. Firstly, it provides an interface that can be used to
-easily script custom reflectometry reduction pipelines. As the fitting of
-reduced reflectivity data is an ill-posed problem, it is often challenging to
-fit reflectivity curves, even with significant a-priori knowledge of the
-structure of the material of interest. In some cases, this could be related to
-errors made at data reduction time. Islatu gives users the
+`Islatu` [@islatu_doi] is a Python package that simplifies the process of
+reducing raw reflectometry data to data that has scientific value. This package
+is designed to serve three purposes. Firstly, it provides an interface that can
+be used to easily script custom reflectometry reduction pipelines. As the
+fitting of reduced reflectivity data is an ill-posed problem, it is often
+challenging to fit reflectivity curves, even with significant a-priori knowledge
+of the structure of the material of interest. In some cases, this could be
+related to errors made at data reduction time. Islatu gives users the
 ability to script data reduction at analysis time. This can be particularly
 important when combining data sets with very different statistical uncertainties
 (as would be the case when comparing neutron and x-ray reflectivity curves), as

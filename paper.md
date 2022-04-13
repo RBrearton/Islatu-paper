@@ -117,7 +117,7 @@ interface. This application is used at the I07 beamline at Diamond
 to process reflectivity data immediately after acquisition. The command-line
 interface runs a typical `islatu` processing script, where the arguments taken
 by the various data reduction methods in the script are extracted from a combination
-of a .yaml configuration file and command-line arguments. The program outputs a
+of a .yml configuration file and command-line arguments. The program outputs a
 human-readable metadata-rich .dat file, which at present aims to comply with the
 ORSO .ort file format definition, and will be converted to comply exactly with
 the .ort file format at such a time as the ORSO file format specification is

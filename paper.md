@@ -1,5 +1,5 @@
 ---
-title: "Islatu: A Python package for the reduction of reflectometry data"
+title: "islatu: A Python package for the reduction of reflectometry data"
 tags:
   - Python
   - reflectometry
@@ -50,27 +50,27 @@ to the beam's attenuation.
 
 # Statement of need
 
-`Islatu` [@islatu_doi] is a Python package that simplifies the process of
+`islatu` [@islatu_doi] is a Python package that simplifies the process of
 reducing raw reflectometry data to data that has scientific value. This package
 is designed to serve three purposes. Firstly, it provides an interface that can
 be used to easily script custom reflectometry reduction pipelines. As the
 fitting of reduced reflectivity data is an ill-posed problem, it is often
 challenging to fit reflectivity curves, even with significant a-priori knowledge
 of the structure of the material of interest. In some cases, this could be
-related to errors made at data reduction time. Islatu gives users the
+related to errors made at data reduction time. `islatu` gives users the
 ability to script data reduction at analysis time. This can be particularly
 important when combining data sets with very different statistical uncertainties
 (as would be the case when comparing neutron and x-ray reflectivity curves), as
 errors are computed at data reduction time.
 
-The second purpose of `Islatu` is to provide a simple command-line interface,
+The second purpose of `islatu` is to provide a simple command-line interface,
 that can be used in conjunction with a configuration file, to make reflectivity
 reduction as automatic as possible. For example, at large-scale facilities, to
 make the most of valuable beamtime, it is imperative that feedback on scans is
 given to users as quickly as possible after a scan has been performed.
 
-The final purpose of `Islatu` is to simplify the handling of errors.
-In `Islatu`, statistical errors are automatically calculated and efficiently
+The final purpose of `islatu` is to simplify the handling of errors.
+In `islatu`, statistical errors are automatically calculated and efficiently
 propagated from the raw data to the reduced dataset using optimized
 `numpy` [@harris2020array] routines. Despite their fundamental simplicity,
 the propagation of uncertainties is error-prone. The assurance provided by
@@ -80,18 +80,18 @@ analysis and less time spent worrying about re-implemening standard routines.
 # Overview
 
 There are a multitude of instruments around the world capable of recording
-reflectivity data. `Islatu` has been designed with this in mind, with a focus on
+reflectivity data. `islatu` has been designed with this in mind, with a focus on
 directly supporting international standard file formats (including the NeXus
 [@konnecke2015nexus] and ORSO file formats) for the initial release,
-making `Islatu` compatible with most
-modern synchrotrons. Thanks to `Islatu`'s modular design, it is a
+making `islatu` compatible with most
+modern synchrotrons. Thanks to `islatu`'s modular design, it is a
 straightforward task to extend this functionality to other data sources; only
 one parsing function needs to be added per supported file type.
 
-Islatu was designed for use with two-dimensional detectors, but support for
+`islatu` was designed for use with two-dimensional detectors, but support for
 point detectors is complete and all reduction steps can be carried out with
-identical syntax. To give an overview of `Islatu`'s Python API, the first step
-in any data reduction with `Islatu` is to instantiate a `Profile` object. A full
+identical syntax. To give an overview of `islatu`'s Python API, the first step
+in any data reduction with `islatu` is to instantiate a `Profile` object. A full
 reflectivity profile can generally be made up of more than one
 $|\vec{Q}|$
 scan, where $\vec{Q}$ is the probe particle's
@@ -111,11 +111,11 @@ minimized). The other reduction methods can be used in entirely analogous ways,
 taking arguments where necessary, and using metadata scraped from the raw data
 files wherever possible.
 
-As well as the abovedescribed Python API, `Islatu` also features a command-line
+As well as the abovedescribed Python API, `islatu` also features a command-line
 interface. This application is used at the I07 beamline at Diamond
 [@nicklin2016diamond]
 to process reflectivity data immediately after acquisition. The command-line
-interface runs a typical `Islatu` processing script, where the arguments taken
+interface runs a typical `islatu` processing script, where the arguments taken
 by the various data reduction methods in the script are extracted from a combination
 of a .yaml configuration file and command-line arguments. The program outputs a
 human-readable metadata-rich .dat file, which at present aims to comply with the

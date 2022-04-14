@@ -1,0 +1,5 @@
+None of the submitted work has been published or submitted elsewhere.
+
+Islatu is a piece of software that was originally developed to standardize the process of x-ray reflectivity reduction at Diamond Light Source, the UK's national synchrotron. Prior to the introduction of islatu, this data reduction process took the form of a series of closed-source scripts, as unfortunately seems to be typical in the field. Islatu grew into a flexible, modular tool, that can easily be extended to support experiments carried out on synchrotron or laboratory sources, using a point or an area detector.
+
+We believe that, in its current state, islatu makes a significant contribution to the reflectometry community, providing a tried-and-tested, performant and feature-rich array of reduction tools. As reflectivity is such a common characterization technique in materials science and condensed matter physics, it is our hope that this package will allow researchers to customize their data analysis in ways that were previously impossible.
